@@ -211,6 +211,12 @@ function buildApiChatRestrictions(peerEntity: GramJs.TypeUser | GramJs.TypeChat)
     });
   }
 
+  if (restrictions.isNotJoined) {
+    Object.assign(restrictions, {
+      isRestricted: true,
+    });
+  }
+
   return restrictions;
 }
 
